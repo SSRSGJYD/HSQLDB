@@ -1,7 +1,6 @@
 CREATE TABLE ACCOUNT(ACCOUNT_NUMBER CHARACTER(10),
 BRANCH_NAME CHARACTER(15), BALANCE NUMERIC(12,2), primary
 key(account_number))
-SET TABLE PUBLIC.ACCOUNT SOURCE "account;fs=|"
 
 insert into account values ('00000001', 'student1', 22);
 
@@ -13,6 +12,9 @@ insert into person values ('00000001', 'student1', 22, true, 1995, '1995-01-01')
 
 
 =====================text table==============================
-CREATE TEXT TABLE ACCOUNT(ACCOUNT_NUMBER CHARACTER(10),
-BRANCH_NAME CHARACTER(15), BALANCE NUMERIC(12,2), primary
-key(account_number))
+create text table person (id char(8), name varchar(8), age int, undergraduate boolean,
+birth_year numeric(4,0), birthdate date, primary key (id));
+
+set table public.person source "person;fs=|"
+
+insert into person values ('00000001', 'student1', 22, true, 1995, '1995-01-01');
