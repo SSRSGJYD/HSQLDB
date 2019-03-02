@@ -10,6 +10,7 @@ birth_year numeric(4,0), birthdate date, primary key (id));
 
 insert into person values ('00000001', 'student1', 22, true, 1995, '1995-01-01');
 
+update person set name = 'newname' where age = 22
 
 =====================text table==============================
 create text table person (id char(8), name varchar(8), age int, undergraduate boolean,
